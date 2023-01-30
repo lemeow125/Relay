@@ -16,6 +16,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 36,
   },
+  image_tiny: {
+    width: 64,
+    height: 64,
+  },
 });
 
 export default styles;

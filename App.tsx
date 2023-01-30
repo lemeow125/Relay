@@ -3,14 +3,15 @@ import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import Home from './src/Screens/Home/Home';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import CustomDrawerContent from './src/Components/DrawerSettings/CustomDrawerContent';
-
+import CustomDrawerContent from './src/Components/DrawerSettings/CustomDrawerContent/CustomDrawerContent';
+import DrawerScreenSettings from './src/Components/DrawerSettings/CustomDrawerContent/DrawerScreenSettings/DrawerScreenSettings';
 const Drawer = createDrawerNavigator();
 function MyDrawer() {
   return (
     <Drawer.Navigator
+      initialRouteName="Home"
       drawerContent={CustomDrawerContent}
-      initialRouteName="Home">
+      screenOptions={DrawerScreenSettings}>
       <Drawer.Screen name="Home" component={Home} />
     </Drawer.Navigator>
   );
