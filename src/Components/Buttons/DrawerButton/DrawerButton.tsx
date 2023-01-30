@@ -25,7 +25,7 @@ export default function DrawerButton(props: props) {
         <View style={{ flex: 1, flexDirection: 'row' }}>
           <Image style={styles.image_tiny} source={icon} />
           <Text
-            style={{ color: 'black', fontSize: 16, verticalAlign: 'middle' }}>
+            style={{ color: 'white', fontSize: 16, verticalAlign: 'middle' }}>
             {goTo}
           </Text>
         </View>

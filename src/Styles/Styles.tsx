@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
   image_tiny: {
     width: 64,
     height: 64,
+    tintColor: 'white',
   },
 });
 
