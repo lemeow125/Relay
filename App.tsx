@@ -6,14 +6,17 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 
 const Drawer = createDrawerNavigator();
 
-export const App = () => {
+export interface props
+{
+  children: React.ReactNode
+}
+export default function App(props: props) {
   return (
     <NavigationContainer>
       <Drawer.Navigator>
         <Drawer.Screen name="Home" component={Home} />
+        {props.children}
       </Drawer.Navigator>
     </NavigationContainer>
   );
-};
-
-export default App;
+}
