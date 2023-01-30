@@ -4,9 +4,6 @@ import { useNavigation } from '@react-navigation/native';
 
 type RootDrawerParamList = {
   navigate: any;
-  Home: undefined;
-  Profile: { userId: string };
-  Feed: { sort: 'latest' | 'top' } | undefined;
 };
 
 interface props {
