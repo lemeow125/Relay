@@ -1,10 +1,10 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
-  bg: {
-    width: '100%',
+  fill_screen: {
+    flex: 1,
+    justifyContent: 'center',
     height: '100%',
-    alignContent: 'center',
-    verticalAlign: 'middle',
+    width: '100%',
   },
 });
 
