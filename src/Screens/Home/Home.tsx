@@ -1,9 +1,10 @@
 import * as React from 'react';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {Button, Text} from 'react-native';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
+  withSpring,
 } from 'react-native-reanimated';
 
 export default function Home() {
@@ -13,6 +14,9 @@ export default function Home() {
       transform: [{translateX: offset.value * 255}],
     };
   });
+  useEffect(() => {
+    offset.value = withSpring(Math.random());
+  }, []);
   return (
     <>
       <Animated.View
@@ -21,7 +25,10 @@ export default function Home() {
           animatedStyles,
         ]}
       />
-      <Button onPress={() => (offset.value = Math.random())} title="Move" />
+      <Button
+        onPress={() => (offset.value = withSpring(Math.random()))}
+        title="Move"
+      />
     </>
   );
 }
