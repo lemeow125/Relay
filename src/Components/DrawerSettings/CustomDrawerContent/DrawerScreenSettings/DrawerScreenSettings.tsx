@@ -1,5 +1,6 @@
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 import type { DrawerNavigationOptions } from '@react-navigation/drawer';
+import styles from '../../../../Styles/Styles';
 const DrawerScreenSettings: DrawerNavigationOptions = {
   headerTitleStyle: { color: 'white', fontSize: 26 },
   headerStyle: { backgroundColor: '#0a0014' },
@@ -12,6 +13,12 @@ const DrawerScreenSettings: DrawerNavigationOptions = {
     backgroundColor: '#0a0014',
     width: 260,
   },
-  headerRight: () => <View style={{ flexDirection: 'row' }}></View>,
+  headerRight: () => (
+    <View style={{ flexDirection: 'row' }}>
+      <Image
+        source={require('../../../../Assets/App-logo.png')}
+        style={styles.statusbar_icon}></Image>
+    </View>
+  ),
 };
 export default DrawerScreenSettings;

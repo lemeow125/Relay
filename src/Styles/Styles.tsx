@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#151a19',
     alignItems: 'center',
     justifyContent: 'center',
+    opacity: 0.9,
     paddingVertical: 50,
     paddingHorizontal: 30,
     borderRadius: 10,
@@ -48,8 +49,8 @@ const styles = StyleSheet.create({
   drawer_button_icon: {
     width: 32,
     height: 32,
-    tintColor: 'white',
     marginLeft: 8,
+    tintColor: 'white',
   },
   drawer_button: {
     flex: 1,
@@ -60,6 +61,11 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     backgroundColor: '#6495ED',
     width: 240,
+  },
+  statusbar_icon: {
+    width: 42,
+    height: 42,
+    marginRight: 8,
   },
 });
 
