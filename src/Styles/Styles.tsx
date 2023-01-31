@@ -38,6 +38,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 24,
   },
+  text_small: {
+    color: 'white',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
   drawer_button_text: {
     color: 'white',
     textAlign: 'center',
