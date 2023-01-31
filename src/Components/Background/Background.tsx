@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { SafeAreaView, Button } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 import styles from '../../Styles/Styles';
 import NetInfo from '@react-native-community/netinfo';
 // @ts-ignore
 import { AnimatedBackgroundColorView } from 'react-native-animated-background-color-view';
 
 import { useEffect, useState } from 'react';
-import { State } from 'react-native-gesture-handler';
 
 export interface props {
   children: React.ReactNode;
@@ -39,10 +38,10 @@ export default function Background(props: props) {
         color={color}
         initialColor={color}
         style={styles.fill_screen}>
+        <View style={styles.padding} />
         {props.children}
+        <View style={styles.padding} />
       </AnimatedBackgroundColorView>
-      <Button title="Blue" onPress={() => setColor('#0b2c3f')} />
-      <Button title="Red" onPress={() => setColor('#8a102c')} />
     </SafeAreaView>
   );
 }
