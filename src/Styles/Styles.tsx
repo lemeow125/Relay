@@ -44,6 +44,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 16,
   },
+  flex_row: {
+    flex: 1,
+    flexDirection: 'row',
+    alignContent: 'center',
+    alignItems: 'center',
+  },
   drawer_button_text: {
     color: 'white',
     textAlign: 'center',

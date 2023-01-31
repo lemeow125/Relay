@@ -3,6 +3,7 @@ import type { DrawerNavigationOptions } from '@react-navigation/drawer';
 import styles from '../../../../Styles/Styles';
 const DrawerScreenSettings: DrawerNavigationOptions = {
   headerTitleStyle: { color: 'white', fontSize: 26 },
+  unmountOnBlur: true,
   headerStyle: { backgroundColor: '#0a0014' },
   headerTintColor: 'white',
   drawerType: 'slide',
