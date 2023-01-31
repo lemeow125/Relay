@@ -13,6 +13,7 @@ export interface props {
 
 export default function Background(props: props) {
   const [color, setColor] = useState('black');
+  const [previousColor, setPVC] = useState('');
 
   // Check if connected every 1 second and adjust background accordingly
   const unsubscribe = NetInfo.addEventListener(state => {});
@@ -23,12 +24,14 @@ export default function Background(props: props) {
         // console.log('Connected to internet? ' + state.isConnected);
         // console.log('Connection type: ' + state.type);
         if (state.isConnected) {
+          setPVC(color);
           setColor('#0b2c3f');
         } else {
+          setPVC(color);
           setColor('#8a102c');
         }
       });
-    }, 1000);
+    }, 750);
     return () => clearInterval(interval);
   }, [color]);
 
@@ -36,7 +39,8 @@ export default function Background(props: props) {
     <SafeAreaView style={styles.fill_screen}>
       <AnimatedBackgroundColorView
         color={color}
-        initialColor={color}
+        initialColor={previousColor}
+        delay={1000}
         style={styles.fill_screen}>
         <View style={styles.padding} />
         {props.children}
