@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     marginVertical: 5,
     borderRadius: 8,
-    backgroundColor: '#6495ED',
+    backgroundColor: '#2d446d',
     width: 240,
   },
   statusbar_icon: {

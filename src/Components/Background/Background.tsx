@@ -12,7 +12,7 @@ export interface props {
 }
 
 export default function Background(props: props) {
-  const [color, setColor] = useState('black');
+  const [color, setColor] = useState('#0b2c3f');
   const [previousColor, setPVC] = useState('');
 
   // Check if connected every 1 second and adjust background accordingly
@@ -33,13 +33,12 @@ export default function Background(props: props) {
       });
     }, 750);
     return () => clearInterval(interval);
-  }, [color]);
+  }, [color, previousColor]);
 
   return (
     <SafeAreaView style={styles.fill_screen}>
       <AnimatedBackgroundColorView
         color={color}
-        initialColor={previousColor}
         delay={1000}
         style={styles.fill_screen}>
         <View style={styles.padding} />
