@@ -11,6 +11,10 @@ export default function CustomDrawerContent(props: {}) {
   return (
     <DrawerContentScrollView {...props}>
       <DrawerButton goTo="Home" icon={require('../../../Assets/home.png')} />
+      <DrawerButton
+        goTo="History"
+        icon={require('../../../Assets/clipboard-list.png')}
+      />
     </DrawerContentScrollView>
   );
 }

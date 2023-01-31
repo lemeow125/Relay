@@ -2,6 +2,7 @@ import * as React from 'react';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import Home from './src/Screens/Home/Home';
+import History from './src/Screens/History/History';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import CustomDrawerContent from './src/Components/DrawerSettings/CustomDrawerContent/CustomDrawerContent';
 import DrawerScreenSettings from './src/Components/DrawerSettings/CustomDrawerContent/DrawerScreenSettings/DrawerScreenSettings';
@@ -13,6 +14,7 @@ function MyDrawer() {
       drawerContent={CustomDrawerContent}
       screenOptions={DrawerScreenSettings}>
       <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Screen name="History" component={History} />
     </Drawer.Navigator>
   );
 }
