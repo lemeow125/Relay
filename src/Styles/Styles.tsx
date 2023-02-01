@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     opacity: 0.9,
-    paddingVertical: 50,
+    paddingVertical: 25,
     paddingHorizontal: 30,
     borderRadius: 10,
   },
@@ -78,6 +78,17 @@ const styles = StyleSheet.create({
     width: 42,
     height: 42,
     marginRight: 8,
+  },
+  button: {
+    marginTop: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    // Button color is in button.js!
+    width: 170,
   },
 });
 
