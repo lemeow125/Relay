@@ -9,6 +9,8 @@ import Select from './src/Screens/Select/Select';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import CustomDrawerContent from './src/Components/DrawerSettings/CustomDrawerContent/CustomDrawerContent';
 import DrawerScreenSettings from './src/Components/DrawerSettings/CustomDrawerContent/DrawerScreenSettings/DrawerScreenSettings';
+import { Provider } from 'react-redux';
+import store from './src/Plugins/Redux/store';
 const Drawer = createDrawerNavigator();
 function MyDrawer() {
   return (
@@ -26,8 +28,10 @@ function MyDrawer() {
 }
 export default function App() {
   return (
-    <NavigationContainer>
-      <MyDrawer />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <MyDrawer />
+      </NavigationContainer>
+    </Provider>
   );
 }

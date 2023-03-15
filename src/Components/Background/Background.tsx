@@ -6,14 +6,16 @@ import NetInfo from '@react-native-community/netinfo';
 import { AnimatedBackgroundColorView } from 'react-native-animated-background-color-view';
 
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setColor } from '../../Plugins/Redux/Slices/BackgroundColorSlice/BackgroundColorSlice';
 
 export interface props {
   children: React.ReactNode;
 }
 
 export default function Background(props: props) {
-  const [color, setColor] = useState('#0b2c3f');
-  const [previousColor, setPVC] = useState('');
+  const color = useSelector((state: any) => state.backgroundcolor.value);
+  const dispatch = useDispatch();
 
   // Check if connected every 1 second and adjust background accordingly
   const unsubscribe = NetInfo.addEventListener(state => {});
@@ -24,16 +26,14 @@ export default function Background(props: props) {
         // console.log('Connected to internet? ' + state.isConnected);
         // console.log('Connection type: ' + state.type);
         if (state.isConnected) {
-          setPVC(color);
-          setColor('#0b2c3f');
+          dispatch(setColor('#0b2c3f'));
         } else {
-          setPVC(color);
-          setColor('#8a102c');
+          dispatch(setColor('#8a102c'));
         }
       });
     }, 750);
     return () => clearInterval(interval);
-  }, [color, previousColor]);
+  }, [color]);
 
   return (
     <SafeAreaView style={styles.fill_screen}>
