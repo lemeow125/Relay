@@ -4,7 +4,7 @@ import styles from '../../Styles/Styles';
 import NetInfo from '@react-native-community/netinfo';
 // @ts-ignore
 import { AnimatedBackgroundColorView } from 'react-native-animated-background-color-view';
-
+import { RootState } from '../../Plugins/Redux/store';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setColor } from '../../Plugins/Redux/Slices/BackgroundColorSlice/BackgroundColorSlice';
@@ -14,7 +14,7 @@ export interface props {
 }
 
 export default function Background(props: props) {
-  const color = useSelector((state: any) => state.backgroundcolor.value);
+  const color = useSelector((state: RootState) => state.backgroundcolor.value);
   const dispatch = useDispatch();
 
   // Check if connected every 1 second and adjust background accordingly
